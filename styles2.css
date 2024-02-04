@@ -1,0 +1,57 @@
+#container {
+    margin-top: 50px;
+    text-align: center;
+}
+#score {
+    color: red;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+#comboDisplay {
+    font-size: 18px;
+}
+body {
+    background-image: url("OIP.jpg"); 
+    background-size: cover; 
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+#board {
+    position: relative;
+    height: 600px;
+    width: 300px;
+    border: 1px solid rgb(0, 0, 0);
+    margin: 0 auto;
+    border-width: 5px
+}
+.lane {
+    position: absolute;
+    width: 60px;
+    height: 100%;
+    border-right: 1px solid rgb(0, 0, 0);
+}
+.horizontal-line {
+    border-top: 3px solid rgb(37, 2, 103);
+    width: 21%;
+    position: relative;
+    top: 620px;
+    right: 3px;
+    height: 20px;
+}
+.note {
+    position: absolute;
+    width: 50px;
+    height: 20px;
+    background-color: rgb(105, 9, 9);
+    top: 0;
+}
+
+#configContainer {
+    display: none;
+}
+
+img {
+    float: right;
+    margin: 1px;
+    width: 500px; 
+}

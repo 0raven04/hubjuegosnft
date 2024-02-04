@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El título de mi página</title>
+    <link rel="stylesheet" type="text/css" href="styles2.css">
+</head>
+<body>
+    <audio autoplay loop>
+        <source src="sound.mp3" type="audio/mp3"  >
+    </audio>
+    <!-- Contenido HTML -->
+    <div id="perderContainer" style="display: none;">
+        <h2>¡Has perdido!</h2>
+        <p>Mejora tu juego y vuelve a intentarlo.</p>
+        <button id="reiniciarJuego">Volver a Jugar</button>
+    </div>
+    <img src="C:\piano\nft1.png" alt="Mi imagen NFT">   
+    <button id="configButton">Configuración</button>
+    <div id="configContainer">
+        <label for="difficulty">Dificultad:</label>
+        <select id="difficulty">
+            <option value="easy">Fácil</option>
+            <option value="normal">Normal</option>
+            <option value="hard">Difícil</option>
+            <option value="very-hard">Muy Difícil</option>
+        </select>
+        <button id="applyConfig">Aplicar Configuración</button>
+    </div>
+    <hr class="horizontal-line">
+    <div id="container">
+        <div id="board">
+            <div class="lane" id="lane1" style="left: 0;"></div>
+            <div class="lane" id="lane2" style="left: 60px;"></div>
+            <div class="lane" id="lane3" style="left: 120px;"></div>
+            <div class="lane" id="lane4" style="left: 180px;"></div>
+            <div class="lane" id="lane5" style="left: 240px;"></div>
+        </div>
+        <p id="score">Puntuación: 0</p>
+        <p id="comboDisplay">Combo: 0</p>
+    </div>
+
+    <script src="script2.js"></script>
+</body>
+</html>

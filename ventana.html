@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ludica Studios</title>
+    <style>
+      
+        body {
+            
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;   
+            align-items: center;
+            justify-content:flex-start; 
+            min-height: 100vh;
+            transition: background-color 0.5s;
+            background: url('tu_imagen_url.jpg') no-repeat center center fixed;
+            background-size:contain;
+        }
+
+        h1 {
+            color: #333;
+            margin-top: 20px;
+        }
+
+        #button-container {
+            margin-top: 20px;
+            display: flex;
+            gap: 20px;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 18px;
+            background-color: #0a0d0ff1;
+            color: #ee2e2e;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #f9fbfcda;
+        }
+
+        #selectedGame {
+            margin-top: 10px;
+            font-size: 18px;
+            color: #0286d8;
+        }
+
+        #character-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .character-img {
+            width: 100px;
+            height: 100px;
+            margin-right: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+            transition: transform 0.3s;
+        }
+
+        .character-img:hover {
+            transform: scale(1.2);
+        }
+
+        #character-info {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body style="background-color:#4af263c0;">
+
+    <audio autoplay loop>
+        <source src="sound.mp3" type="audio/mp3"  >
+    </audio>
+
+<div style="text-align: center; size: 25px;">
+    <h1>Ludica Studios</h1>
+
+    <!-- Botones para redirigir a otras ventanas -->
+    <div id="button-container">
+        <button onclick="redirectTo('piano2.html')" style="width: 200px;">Piano</button>
+        <button onclick="redirectTo('Rompecabezas.html')" style="width: 200px;">Rompecabezas</button>
+    </div>
+
+    <!-- Mostrar el juego y personaje seleccionados -->
+    <div id="character-info">Personaje seleccionado: Ninguno </div>
+
+    <!-- Cambio de personajes -->
+    <div id="character-container">
+        <img src="Tlaloc.png" alt="Character 1" class="character-img" onclick="selectCharacter(1)" style="position: absolute; top: 350px; left: 100px; width: 200px; height: 350px;">
+        <img src="Huitziloposhtli.png" alt="Character 2" class="character-img" onclick="selectCharacter(2)" style="position: absolute; top: 350px; left: 500px; width: 230px; height: 380px;">
+        <img src="Quetzalcoatl.png" alt="Character 3" class="character-img" onclick="selectCharacter(3)" style="position: absolute; top: 350px; left: 900px; width: 150px; height: 350px;">
+        <img src="Tonatiu.png" alt="Character 4" class="character-img" onclick="selectCharacter(4)" style="position: absolute; top: 320px; left: 1200px; width: 280px; height: 400px;">
+    </div>
+
+
+    <script>
+        var selectedCharacter = 1;
+
+        function selectCharacter(characterNumber) {
+            selectedCharacter = characterNumber;
+            var characterInfo = document.getElementById('character-info');
+            characterInfo.textContent = "Personaje seleccionado: " + getCharacterName(selectedCharacter);
+        }
+
+        function getCharacterName(characterNumber) {
+            switch (characterNumber) {
+                case 1:
+                    return "Tlaloc";
+                case 2:
+                    return "Huitziloposhtli";
+                case 3:
+                    return "Quetzalcoatl";
+                case 4:
+                    return "Tonatiu";
+                default:
+                    return "Desconocido";
+            }
+        }
+
+        function redirectTo(page) {
+            window.location.href = page;
+        }
+    </script>
+</body>
+</html>
+
